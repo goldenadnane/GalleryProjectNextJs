@@ -1,9 +1,12 @@
-const express = require("express");
-const cors = require("cors");
-const app = express();
+interface Photo {
+  id: number;
+  title: string;
+  url: string;
+  description: string;
+}
 
-app.use(cors());
-const photos = [
+
+const photos : Photo[] = [
   {
     id: 1,
     title: "Photo 1",
@@ -48,18 +51,10 @@ const photos = [
   },
 ];
 
-app.get("/api/photos", (req, res) => {
-  res.json(photos);
-});
+export const getAllPhotos = (): Photo[] => {
+  return photos;
+};
 
-app.get("/api/photos/:id", (req, res) => {
-  const photo = photos.find((photo) => photo.id === parseInt(req.params.id));
-  if (!photo) {
-    res.status(404).send("The photo with the given ID was not found");
-  }
-  res.json(photo);
-});
-
-app.listen(5000, () => {
-  console.log("Server started on http://localhost:5000");
-});
+export const getPhotoById = (id: number): Photo | undefined => {
+  return photos.find(photo => photo.id === id);
+};

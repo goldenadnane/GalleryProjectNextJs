@@ -1,6 +1,8 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import React from "react";
 
 interface Photo {
   id: number;
@@ -9,7 +11,7 @@ interface Photo {
   description: string;
 }
 
-export default function PhotosPage() {
+export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
 
   useEffect(() => {
