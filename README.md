@@ -1,7 +1,7 @@
 1) Créer un projet nextjs en utisant la commande : npx create-next-app
 2) Donner un nom à votre application
 3) Lancer la commande : npm install express cors
-4) Lancer les commandes node server.js (Pour le Backend) et npm run dev (pour le Frontend) 
+4) Lancer les commandes : ts-node server.ts (Pour le Backend) et npm run dev (pour le Frontend) 
 
 https://github.com/user-attachments/assets/aa45b372-cbde-4021-a715-69be9c471d66
 
